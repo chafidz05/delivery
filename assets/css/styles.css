@@ -1,8 +1,10 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+/*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3rem;
-  --hue: 45%;
+  /*========== Colors ==========*/
+  --hue: 45;
   --sat: 98%;
   --first-color: hsl(var(--hue), var(--sat), 60%);
   --first-color-light: hsl(var(--hue), var(--sat), 85%);
@@ -12,9 +14,10 @@
   --text-color: hsl(var(--hue), 4%, 35%);
   --text-color-light: hsl(var(--hue), 4%, 65%);
   --body-color: hsl(var(--hue), 0%, 100%);
-  --container-color: #fff;
+  --container-color: #FFF;
   --scroll-bar-color: hsl(var(--hue), 4%, 85%);
   --scroll-thumb-color: hsl(var(--hue), 4%, 75%);
+  /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
   --biggest-font-size: 2rem;
   --h2-font-size: 1.25rem;
@@ -22,13 +25,16 @@
   --normal-font-size: .938rem;
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
+  /*========== Font weight ==========*/
   --font-semi-bold: 600;
   --font-bold: 700;
+  /*========== Margenes ==========*/
   --mb-0-5: .5rem;
   --mb-0-75: .75rem;
   --mb-1: 1rem;
   --mb-1-5: 1.5rem;
   --mb-2: 2rem;
+  /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
 }
@@ -39,10 +45,11 @@
     --h3-font-size: 1.25rem;
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
-    --smalle-font-size: .813rem;
+    --smaller-font-size: .813rem;
   }
 }
 
+/*=============== BASE ===============*/
 *, ::before, ::after {
   box-sizing: border-box;
   padding: 0;
@@ -81,8 +88,10 @@ img {
   height: auto;
 }
 
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
 body.dark-theme {
-  --first-color-light: hsl(var(--hue), var(--set), 75%);
+  --first-color-light: hsl(var(--hue), var(--sat), 75%);
   --title-color: hsl(var(--hue), 4%, 95%);
   --text-color: hsl(var(--hue), 4%, 80%);
   --body-color: hsl(var(--hue), 8%, 13%);
@@ -91,6 +100,7 @@ body.dark-theme {
   --scroll-thumb-color: hsl(var(--hue), 4%, 24%);
 }
 
+/*========== Button Dark/Light ==========*/
 .change-theme {
   position: absolute;
   right: 1.5rem;
@@ -104,6 +114,7 @@ body.dark-theme {
   background-color: var(--container-color);
 }
 
+/*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 4.5rem 0 1rem;
 }
@@ -125,6 +136,7 @@ body.dark-theme {
   justify-self: center;
 }
 
+/*=============== LAYOUT ===============*/
 .container {
   max-width: 968px;
   margin-left: var(--mb-1-5);
@@ -136,6 +148,7 @@ body.dark-theme {
   gap: 1.5rem;
 }
 
+/*=============== HEADER ===============*/
 .header {
   width: 100%;
   background-color: var(--body-color);
@@ -146,6 +159,7 @@ body.dark-theme {
   transition: 0.5s;
 }
 
+/*=============== NAV ===============*/
 .nav {
   height: var(--header-height);
   display: flex;
@@ -183,10 +197,12 @@ body.dark-theme {
   cursor: pointer;
 }
 
+/* Show menu */
 .show-menu {
   top: calc(var(--header-height) + 1rem);
 }
 
+/* Active link */
 .active-link {
   position: relative;
 }
@@ -201,10 +217,12 @@ body.dark-theme {
   border-radius: 50%;
 }
 
+/* Change background header */
 .scroll-header {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
+/*=============== HOME ===============*/
 .home__container {
   row-gap: 3rem;
 }
@@ -217,10 +235,11 @@ body.dark-theme {
   margin-bottom: var(--mb-2);
 }
 
+/*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
   background-color: var(--first-color);
-  color: #1a1a1a;
+  color: #1A1A1A;
   padding: 0.75rem 1.5rem;
   border-radius: 3rem;
   font-weight: var(--font-semi-bold);
@@ -251,6 +270,123 @@ body.dark-theme {
   font-size: 1.5rem;
 }
 
+/*=============== ABOUT ===============*/
+.about__container {
+  gap: 2.5rem;
+}
+.about__data {
+  text-align: center;
+}
+
+/*=============== SECURITY ===============*/
+.security__container {
+  gap: 2.5rem;
+}
+.security__data {
+  text-align: center;
+}
+
+/*=============== SERVICES ===============*/
+.services__container {
+  padding-top: 1rem;
+}
+.services__data {
+  display: grid;
+  row-gap: 1rem;
+  background-color: var(--container-color);
+  box-shadow: 0px 2px 6px hsla(var(--hue), 100%, 15%, 0.15);
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+.services__img {
+  width: 135px;
+  justify-self: center;
+  margin-bottom: var(--mb-0-5);
+}
+
+/*=============== APP ===============*/
+.app__container {
+  gap: 2.5rem;
+}
+.app__data {
+  text-align: center;
+}
+.app__description {
+  margin-bottom: var(--mb-1-5);
+}
+.app__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/*=============== CONTACT ===============*/
+.contact__container {
+  padding-bottom: 3rem;
+}
+.contact__description {
+  text-align: center;
+}
+.contact__content {
+  row-gap: 0.75rem;
+}
+.contact__address {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+.contact__information {
+  font-weight: initial;
+  color: var(--text-color);
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  background-color: var(--first-color-lighten);
+  padding-bottom: 2rem;
+}
+.footer__container {
+  row-gap: 2rem;
+}
+.footer__logo, .footer__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-75);
+}
+.footer__logo {
+  display: inline-block;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+.footer__description, .footer__link {
+  font-size: var(--small-font-size);
+}
+.footer__links {
+  display: grid;
+  row-gap: 0.5rem;
+}
+.footer__link {
+  color: var(--title-color);
+}
+.footer__social {
+  display: flex;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+}
+.footer__social-link {
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+.footer__copy {
+  margin-top: 6rem;
+  text-align: center;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color);
+}
+
+/*=============== SCROLL UP ===============*/
 .scrollup {
   position: fixed;
   background: var(--first-color);
@@ -272,10 +408,12 @@ body.dark-theme {
   color: var(--title-color);
 }
 
+/* Show Scroll Up*/
 .show-scroll {
   bottom: 3rem;
 }
 
+/*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
   width: 0.6rem;
   border-radius: 0.5rem;
@@ -289,6 +427,8 @@ body.dark-theme {
   background-color: var(--text-color-light);
 }
 
+/*=============== MEDIA QUERIES ===============*/
+/* For small devices */
 @media screen and (max-width: 360px) {
   .svg__img {
     width: 100%;
@@ -304,7 +444,8 @@ body.dark-theme {
     grid-template-columns: max-content;
   }
 }
-@media screen and (max-width: 576px) {
+/* For medium devices */
+@media screen and (min-width: 576px) {
   .svg__img {
     width: 100%;
   }
@@ -369,6 +510,7 @@ body.dark-theme {
     justify-content: initial;
   }
 }
+/* For large devices */
 @media screen and (min-width: 968px) {
   .button__header {
     display: block;
